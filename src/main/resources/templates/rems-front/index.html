@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        .custom-logo {
+            padding: 0;
+            margin: 0;
+            width: 120px;
+        }
+        #course button.btn.btn-default.btn-lg {
+            background-color: forestgreen; /* 这里可以将 blue 替换为你想要的任何颜色名称或十六进制颜色值 */
+            font-family: Arial, sans-serif; /* 更换为你想要的字体 */
+            font-size: 24px; /* 更换为你想要的字号大小 */
+        }
+        #course {
+            position: relative;
+            width: 100%;
+            height: 300px; /* 设置一个固定高度以便查看效果，实际使用中可根据需求调整 */
+        }
+
+        #course::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/images/banner.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            filter: opacity(0.75);
+            border-width: 2px;
+            border-style: solid;
+            z-index: -1;
+        }
+
+        #course.text-content {
+            position: relative;
+            z-index: 1;
+            color: white; /* 设置文字颜色，可根据实际调整 */
+        }
+    </style>
+    <meta charset="utf-8"/>
+    <title>红色家书网</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/rems/front-index.css}"/>
+    <script type="text/javascript" th:src="@{/jquery/jquery-3.7.1.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/js/utils/date-util.js}"></script>
+    <script th:src="@{/js/utils/lay-msg.js}"></script>
+</head>
+<!-- 添加scroll控件，滚动监听 -->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- 响应式导航栏 -->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" clickMenu(1)>
+                <img src="/images/logo.png" class=" custom-logo" />
+            </a>
+            <!-- 小尺寸下，隐藏导航菜单 -->
+            <button type="button" class="navbar-toggle" data-toggle="collspse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#course" onclick="clickMenu(2)">研读家书</a></li>
+                <li><a href="#popularNavEntity" onclick="clickMenu(3)">热门搜索</a></li>
+                <li><a href="#messageEntity" onclick="clickMenu(4)">网站留言</a></li>
+                <li><a href="#pricing" onclick="clickMenu(5)">家书订购</a></li>
+                <li><a href="#contact" onclick="clickMenu(6)">联系我们</a></li>
+                <li><a href="http://123.56.109.152:8888/back">后台管理</a></li>
+<!--                <li><a href="http://127.0.0.1:8888/back">后台管理</a></li>-->
+                <li><a href="/logout">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 问题查询 -->
+<div class="jumbotron text-center">
+    <h1>红色家书网</h1>
+    <p>专注于廉洁文化与廉洁教育研究</p>
+    <!-- form-inline让表单元素水平排列 -->
+    <form class="form-inline" action="/question/search">
+        <label>
+            <input type="text" name="title" class="form-control" size="50" placeholder="请输入你要搜索的内容"/>
+        </label>
+        <input type="submit" class="btn btn-danger" value="查询"/>
+    </form>
+</div>
+<!-- 课程学习1 -->
+<div id="course" class="container-fluid">
+    <div class="row">
+        <div class="text-content col-sm-8 col_two">
+            <h2>中北大学</h2>
+            <h4>廉洁文化与廉洁教育</h4>
+            <h4>红色家书数字化平台</h4>
+            <a href="/course-learning">
+                <button class="btn btn-default btn-lg">进入学习</button>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 课程学习2 -->
+<div class="container-fluid text-center bg-grey">
+    <h1>研读家书</h1>
+    <h3>廉洁文化与廉洁教育研究</h3>
+    <div class="row text-center">
+        <div class="col-sm-4">
+            <a href="/course01" class="thumbnail">
+                <img src="/images/z/1.png"/>
+                <p><strong>为理想英勇就义，牵挂亲人</strong></p>
+                <p>史砚芬：我的死，是为着社会、国家和人类</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="/course02" class="thumbnail">
+                <img src="/images/z/2.png"/>
+                <p><strong>视死如归，对家人的嘱托</strong></p>
+                <p>骆何民：不要和我所恨的人妥协</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="/course03" class="thumbnail">
+                <img src="/images/z/3.jpg"/>
+                <p><strong>念家思亲，期待凯旋报恩</strong></p>
+                <p>李云鹏：待凯然而归以报父母恩</p>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 热门导航 -->
+<div id="popularNavEntity" class="container-fluid text-center">
+    <h2>热门搜索</h2>
+    <br/>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-2">排名</div>
+                <div class="col-md-3">名称</div>
+                <div class="col-md-7">热度</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row" th:each="pn:${session.pnList}">
+                <div class="col-md-2">
+                    <span class="text-primary">[[${pn.getNavNum()}]]</span>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-primary">[[${pn.getNavName()}]]</span>
+                </div>
+                <div class="col-md-5">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success active"
+                             th:style="'width:'+ ${pn.getNavHeat()} + '%;'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf"></span>
+            <h4>红色家书</h4>
+            <p>Inherit Red Family Letters....</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf"></span>
+            <h4>廉洁文化</h4>
+            <p>Promote Incorruptible Culture....</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf"></span>
+            <h4>廉洁教育</h4>
+            <p>Strengthen Integrity Education....</p>
+        </div>
+    </div>
+</div>
+<!-- 网站留言 -->
+<div id="messageEntity" class="container">
+    <h2>网站留言</h2>
+    <br/>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- 轮播项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/images/lb_3.jpg"/>
+            </div>
+            <div class="item">
+                <img src="/images/lb_1.jpg"/>
+            </div>
+        </div>
+        <!-- 轮播导航 左右切换的按钮 -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
+
+<div id="msgBox">
+    <h2>&nbsp;&nbsp;来，讲讲你正在做什么事情，又在思索着什么呢？</h2>
+    <div>
+        <label for="conBox"></label>
+        <textarea name="m_content" id="conBox" class="f-text"></textarea>
+    </div>
+    <div class="tr">
+        <p>
+            <button id="publish" class="btn btn-danger">发表</button>
+        </p>
+    </div>
+    <div class="list">
+        <h3><span>大家在说</span></h3>
+        <ul id="tab"></ul>
+    </div>
+</div>
+<!-- 套餐 -->
+<div id="pricing" class="container-fluid">
+    <div class="text-center">
+        <h2>家书订购</h2>
+        <h4>选择一份适合自己的方案</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>经典套装</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>汇集具有代表性的家书组合，涵盖不同阶段重要人物家书，如毛泽东、周恩来等的家书或烈士家书，体现核心内涵与历史价值。</strong></p>
+                </div>
+                <div class="panel-footer">
+<!--                    <h3>￥99</h3>-->
+                    <button class="btn btn-lg">购买</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>主题精选</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>按不同历史主题挑选家书集。革命时期主题展现革命者的信仰和牺牲精神等；建设时期主题体现先辈们投身建设的热情，助读者了解不同阶段的红色精神。</strong></p>
+                </div>
+                <div class="panel-footer">
+<!--                    <h3>￥199</h3>-->
+                    <button class="btn btn-lg">购买</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>订制套餐</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>为满足用户个性化需求打造。教育工作者可依学生年龄、教育目标定制，如小学生选简洁有正能量家书，中学生选有思想深度家书。研究人员可获与研究主题紧密相关家书，如特定历史时期相关内容。</strong></p>
+                </div>
+                <div class="panel-footer">
+<!--                    <h3>￥399</h3>-->
+                    <button class="btn btn-lg">购买</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 页脚 -->
+<div id="contact" class="container-fluid bg-grey">
+    <h2 class="text-center">联系我们</h2>
+    <br/>
+    <div class="row">
+        <div class="col-sm-5">
+            <p>联系我们，我们将在24小时内回复您</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>山西太原学院路3号中北大学软件学院</p>
+            <p><span class="glyphicon glyphicon-phone"></span>+19903411461</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>liuxin@163.com</p>
+        </div>
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" required/>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label for="email"></label>
+                    <input type="text" name="name" id="email" class="form-control" placeholder="E-mail" required/>
+                </div>
+            </div>
+            <label for="comments"></label>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5">
+            </textarea>
+            <br/>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <button class="btn btn-default pull-right" type="submit">
+                        发送
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <p><span><a href="#">红色家书网</a></span> made by 中北大学软件学院</p>
+    <br>
+    友情链接：<a href="https://v.ccdi.gov.cn/special/qlzg2023/index.shtml">清廉中国</a>&nbsp;&nbsp;<a href="https://jyt.shanxi.gov.cn/ztzl_151/qlsx_qlxx/">清廉山西</a>&nbsp;&nbsp;<a href="https://qlxx.nuc.edu.cn/">清廉中北</a>
+</footer>
+</body>
+<script>
+    function clickMenu(id) {
+        $.ajax({
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            url: '/nav/click-update',
+            type: 'post',
+            dataType: 'json',
+            data: JSON.stringify({
+                id: id
+            })
+        })
+    }
+
+    $(function () {
+        // 页面加载数据 MessageList
+        rest()
+        layer = layui.layer
+
+        function rest() {
+            $.ajax({
+                url: '/message/query-all',
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    showData(data)
+                },
+                error: function () {
+                    errorMsg('留言列表数据加载失败！')
+                }
+            })
+        }
+
+        // 显示数据
+        function showData(jsonList) {
+            let str = ''
+            for (let i = 0; i < jsonList.length; i++) {
+                str =
+                    "<li><div class='userPic'><img src='/images/" +
+                    jsonList[i].msgUserFace +
+                    "'/></div>" +
+                    " <div class='content'><div class='userName'>" +
+                    jsonList[i].msgUsername +
+                    '</div>' +
+                    " <div class='msgInfo'>" +
+                    jsonList[i].msgContent +
+                    '</div>' +
+                    " <div class='times'><span> " +
+                    timestampToYMDHMS(jsonList[i].createTime) +
+                    ' </span></div></div> </li>'
+                $('#tab').append(str)
+            }
+        }
+
+        // 后台管理员验证  是否是超级管理员
+        $('#htgl').click(function () {
+            $.ajax({
+                type: 'post',
+                url: '/rems-back/index',
+                success: function (res) {
+                    if (res.code === 0) {
+                        layer.load(2)
+                        setTimeout(function () {
+                            layer.closeAll('loading')
+                            window.location.href = '/back'
+                        }, 1000)
+                    } else {
+                        errorMsg('当前用户不是超级管理员，切换登录再来试试吧！')
+                    }
+                },
+                error: function (err) {
+                    errorMsg('检查错误' + err + '!')
+                }
+            })
+        })
+
+        // 发表留言
+        $('#publish').click(function () {
+            let content = $('#conBox')
+            $.ajax({
+                type: 'post',
+                url: '/message/publish',
+                data: {
+                    content: content.val()
+                },
+                success: function (data) {
+                    if (data != null) {
+                        const userinfo = eval(data)[0]
+                        $('#tab').append(
+                            "<li><div class='userPic'><img src=" +
+                            userinfo.msgUserFace +
+                            "'/images'/></div>" +
+                            " <div class='content'><div class='userName'>" +
+                            userinfo.msgUsername +
+                            '</div>' +
+                            " <div class='msgInfo'>" +
+                            userinfo.msgContent +
+                            '</div>' +
+                            " <div class='times'><span> " +
+                            timestampToYMDHMS(userinfo.createTime) +
+                            ' </span></div></div> </li>'
+                        )
+                        successMsg('发表成功！')
+                        content.val('')
+                    } else {
+                        errorMsg('发表失败！')
+                    }
+                },
+                error: function () {
+                    errorMsg('发表失败！')
+                }
+            })
+        })
+    })
+</script>
+</html>

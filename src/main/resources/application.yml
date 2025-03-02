@@ -1,0 +1,34 @@
+
+spring:
+  # Mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.56.109.152:3306/rems?characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    username: rems
+    password: rems
+  # thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    mode: HTML
+    cache: false
+
+# mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+server:
+  port: 8083
+  error:
+    path: /error
+#logging:
+#  level:
+#    com: debug

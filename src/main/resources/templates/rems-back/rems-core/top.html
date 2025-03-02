@@ -1,0 +1,92 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>top</title>
+    <meta charset="UTF-8" content="text/html"/>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}"/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font: 400 15px sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        /* 导航栏样式 */
+        .navbar-header a {
+            position: relative;
+            bottom: 10px;
+            margin-bottom: 0;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #ce0002;
+            z-index: 9999;
+            border: 0;
+            font-size: 16px;
+            line-height: 1.42857143;
+            letter-spacing: 4px;
+            border-radius: 0;
+        }
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #ce0002 !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        .custom-logo {
+            padding: 0;
+            margin: 0;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 响应式导航栏 -->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/front-index">
+                <img class="custom-logo" src="/images/logo.png"/>
+            </a>
+            <!-- 小尺寸下，隐藏导航菜单 -->
+            <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collspse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about">研读家书</a></li>
+                <li><a href="#service">热门搜索</a></li>
+                <li><a href="#portfolio">网站留言</a></li>
+                <li><a href="#pricing">家书订购</a></li>
+                <li><a href="#contact">联系我们</a></li>
+                <li><a href="http://123.56.109.152:8888/back">后台管理</a></li>
+<!--                <li><a href="http://127.0.0.1:8888/back">后台管理</a></li>-->
+                <li><a href="/toLogin">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

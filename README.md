@@ -1,4 +1,4 @@
-<h1 style="text-align: center">红色教育网站系统</h1>
+<h1 style="text-align: center">红色家书网站系统</h1>
 
  <p align="center">
       <img src="https://img.shields.io/badge/Release-V4.1.0-red.svg" alt="Downloads">
@@ -12,15 +12,17 @@
    <img src="https://img.shields.io/badge/Copyright%20-@BladeX-pink.svg" alt="Downloads">
  </a>
  </p>  
+声明：本项目成功部署到云服务器上，可通过以下网址访问：
 
+**http://123.56.109.152:8888/**
 
 ### 项目简介
-&emsp;&emsp;**红色教育平台** —— 基于`Spring Boot 2.7.
-2`、`MySQL`、`Mybatis-Plus`和`LayUI`构建的全面教育网站，旨在传承红色文化，弘扬革命精神。本项目融合了现代技术，为用户提供了一个互动性强、信息丰富的在线学习环境。
+&emsp;&emsp;**红色家书平台** —— 基于`Spring Boot 2.7.
+2`、`MySQL`、`Mybatis-Plus`和`LayUI`构建的全面家书网站，旨在传承红色文化，弘扬革命精神。本项目融合了现代技术，为用户提供了一个互动性强、信息丰富的在线学习环境。
 
 ### 主要特性
 - **前沿技术栈**：采用最新的Spring Boot框架，结合MySQL数据库和Mybatis-Plus持久层框架，确保了项目的稳定性和高效性，同时享受丰富的社区资源支持。
-- **独特主题定位**：作为市场上少数以红色教育为主题的Spring Boot项目，具有鲜明的特色和强烈的教育意义。
+- **独特主题定位**：作为市场上少数以红色家书为主题的Spring Boot项目，具有鲜明的特色和强烈的家书意义。
 - **快速开发周期**：通过现代化的开发工具和流程，实现快速迭代和高效开发，缩短项目上线时间。
 
 ###  系统功能
@@ -34,7 +36,7 @@
 - **导航管理**：
   - 灵活配置：轻松管理前台导航栏，支持自定义排序和快速添加。
   - 用户体验优化：通过合理的导航设计，提升用户浏览体验。
-- **课程学习管理**：
+- **家书学习管理**：
   - 资源丰富：支持课程资料和视频的上传，构建丰富的在线学习资源库。
   - 高效管理：提供便捷的课程资料管理界面，轻松进行内容更新和分类。
 - **网站留言管理**：
@@ -98,23 +100,12 @@
 ### 快速启动
 
 - 克隆项目到本地
+
 - 导入项目到 IDE
+
 - 修改 application.yml 中的数据库连接信息
+
 - 运行 RemsBootApplication 类
-- 打开浏览器，输入 http://localhost:8080 访问项目
 
-### 项目演示
-
-- 登录页面
-  ![readme_login.jpg](src/main/resources/static/images/readme_login.jpg)
-- 首页
-  ![readme_index.jpg](src/main/resources/static/images/readme_index.jpg)
-- 课程学习
-  ![readme_course_learning.jpg](src/main/resources/static/images/readme_course_learning.jpg)
-- 热门导航
-  ![readme_popular_nav.jpg](src/main/resources/static/images/readme_popular_nav.jpg)
-- 网站留言
-  ![readme_message.jpg](src/main/resources/static/images/readme_message.jpg)
-  - 后台管理
-    ![readme_back_manage.jpg](src/main/resources/static/images/readme_back_manage.jpg)
-    ![readme_user_manage.jpg](src/main/resources/static/images/readme_user_manage.jpg)
+  打开浏览器，输入 http://localhost:8080 访问项目
+  
